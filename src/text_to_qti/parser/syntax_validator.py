@@ -143,7 +143,8 @@ class SyntaxValidator:
                     question_type = value.strip().lower()
                     if question_type not in ["multiple_choice", "true_false"]:
                         raise ValidationError(
-                            f"Question {question_num}: Invalid question type '{question_type}'. "
+                            f"Question {question_num}: "
+                            f"Invalid question type '{question_type}'. "
                             "Must be 'multiple_choice' or 'true_false'"
                         )
                 elif key == "Points":
@@ -192,7 +193,8 @@ class SyntaxValidator:
         expected_letters = [chr(ord("a") + i) for i in range(len(letters))]
         if letters != expected_letters:
             raise ValidationError(
-                f"Question {question_num}: Answer letters must be sequential (a, b, c, ...). "
+                f"Question {question_num}: "
+                "Answer letters must be sequential (a, b, c, ...). "
                 f"Found: {', '.join(letters)}"
             )
 

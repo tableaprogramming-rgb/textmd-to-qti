@@ -43,12 +43,16 @@ class Question(BaseModel):
 
     model_config = {"validate_default": True}
 
-    id: str = Field(default_factory=lambda: str(uuid.uuid4()), description="Unique question ID")
+    id: str = Field(
+        default_factory=lambda: str(uuid.uuid4()), description="Unique question ID"
+    )
     type: QuestionType = Field(..., description="Question type")
     text: str = Field(..., description="Question text")
     choices: List[AnswerChoice] = Field(..., description="Answer choices")
     points: int = Field(default=1, ge=1, description="Points for this question")
-    feedback: Optional[str] = Field(default=None, description="Feedback shown after answering")
+    feedback: Optional[str] = Field(
+        default=None, description="Feedback shown after answering"
+    )
 
     @field_validator("text")
     @classmethod
@@ -77,7 +81,9 @@ class Question(BaseModel):
         letters = [choice.letter for choice in v]
         expected_letters = [chr(ord("a") + i) for i in range(len(v))]
         if letters != expected_letters:
-            raise ValueError(f"Answer letters must be sequential (a, b, c, ...), got: {letters}")
+            raise ValueError(
+                f"Answer letters must be sequential (a, b, c, ...), got: {letters}"
+            )
 
         # Check that at least one answer is correct
         if not any(choice.is_correct for choice in v):
@@ -90,11 +96,15 @@ class Question(BaseModel):
                 raise ValueError("True/False questions must have exactly 2 choices")
         elif question_type == QuestionType.MULTIPLE_CHOICE:
             if len(v) < 2:
-                raise ValueError("Multiple choice questions must have at least 2 choices")
+                raise ValueError(
+                    "Multiple choice questions must have at least 2 choices"
+                )
             # Only one correct answer for multiple choice
             correct_count = sum(1 for choice in v if choice.is_correct)
             if correct_count != 1:
-                raise ValueError(f"Multiple choice questions must have exactly 1 correct answer, got: {correct_count}")
+                raise ValueError(
+                    f"Multiple choice questions must have exactly 1 correct answer, got: {correct_count}"
+                )
 
         return v
 
@@ -114,8 +124,12 @@ class QuizMetadata(BaseModel):
 
     title: str = Field(..., description="Quiz title")
     description: Optional[str] = Field(default=None, description="Quiz description")
-    points_per_question: int = Field(default=1, ge=1, description="Default points per question")
-    shuffle_answers: bool = Field(default=False, description="Whether to shuffle answer choices")
+    points_per_question: int = Field(
+        default=1, ge=1, description="Default points per question"
+    )
+    shuffle_answers: bool = Field(
+        default=False, description="Whether to shuffle answer choices"
+    )
 
     @field_validator("title")
     @classmethod

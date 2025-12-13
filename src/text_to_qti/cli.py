@@ -42,7 +42,9 @@ def cli() -> None:
     default="1.2",
     help="QTI version to generate",
 )
-def convert(input_file: str, output: str, validate_only: bool, qti_version: str) -> None:
+def convert(
+    input_file: str, output: str, validate_only: bool, qti_version: str
+) -> None:
     """Convert a text file to QTI package."""
     try:
         with Progress() as progress:

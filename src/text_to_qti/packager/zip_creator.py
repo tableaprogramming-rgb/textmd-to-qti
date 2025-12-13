@@ -44,13 +44,17 @@ class ZIPCreator:
                 zf.writestr("imsmanifest.xml", manifest_str)
 
                 # Add assessment with embedded items (Canvas format)
-                assessment_str = element_to_string(assessment_xml, with_declaration=True)
+                assessment_str = element_to_string(
+                    assessment_xml, with_declaration=True
+                )
                 zf.writestr(
                     f"{self.ASSESSMENT_ID}/{self.ASSESSMENT_ID}.xml", assessment_str
                 )
 
                 # Add Canvas-specific metadata
-                metadata_str = element_to_string(canvas_metadata_xml, with_declaration=True)
+                metadata_str = element_to_string(
+                    canvas_metadata_xml, with_declaration=True
+                )
                 zf.writestr(f"{self.ASSESSMENT_ID}/assessment_meta.xml", metadata_str)
 
             return output_file

@@ -168,11 +168,18 @@ class AssessmentGenerator:
         correct_cond.set("continue", "No")
 
         condvar = add_child(correct_cond, "conditionvar")
-        varequal = add_child(condvar, "varequal", f"CHOICE_{correct_choice.letter.upper()}")
+        varequal = add_child(
+            condvar, "varequal", f"CHOICE_{correct_choice.letter.upper()}"
+        )
         varequal.set("respident", "response1")
 
         add_child(correct_cond, "setvar", "100", action="Set", varname="SCORE")
-        add_child(correct_cond, "displayfeedback", feedbacktype="Response", linkrefid="correct_fb")
+        add_child(
+            correct_cond,
+            "displayfeedback",
+            feedbacktype="Response",
+            linkrefid="correct_fb",
+        )
 
         # General condition for wrong answers
         general_cond = add_child(resprocessing, "respcondition")
@@ -181,7 +188,12 @@ class AssessmentGenerator:
         condvar = add_child(general_cond, "conditionvar")
         add_child(condvar, "other")
 
-        add_child(general_cond, "displayfeedback", feedbacktype="Response", linkrefid="general_fb")
+        add_child(
+            general_cond,
+            "displayfeedback",
+            feedbacktype="Response",
+            linkrefid="general_fb",
+        )
 
     def _add_feedback(self, item: etree._Element, question) -> None:
         """Add feedback sections."""

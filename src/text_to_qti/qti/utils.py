@@ -70,8 +70,13 @@ def element_to_string(
     Returns:
         XML string
     """
-    result = etree.tostring(
-        elem, encoding="unicode", pretty_print=pretty_print, xml_declaration=False
+    result = str(
+        etree.tostring(
+            elem,
+            encoding="unicode",
+            pretty_print=pretty_print,
+            xml_declaration=False,
+        )
     )
     if with_declaration:
         result = '<?xml version="1.0" encoding="UTF-8"?>\n' + result

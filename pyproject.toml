@@ -24,12 +24,6 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
 ]
 
-[project.urls]
-Homepage = "https://github.com/tableaprogramming-rgb/textmd-to-qti"
-Repository = "https://github.com/tableaprogramming-rgb/textmd-to-qti"
-Documentation = "https://github.com/tableaprogramming-rgb/textmd-to-qti#readme"
-"Bug Tracker" = "https://github.com/tableaprogramming-rgb/textmd-to-qti/issues"
-
 dependencies = [
     "lxml>=5.3.0",
     "pydantic>=2.10.0",
@@ -38,6 +32,12 @@ dependencies = [
     "markdown>=3.5.0",
     "PyYAML>=6.0.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/tableaprogramming-rgb/textmd-to-qti"
+Repository = "https://github.com/tableaprogramming-rgb/textmd-to-qti"
+Documentation = "https://github.com/tableaprogramming-rgb/textmd-to-qti#readme"
+"Bug Tracker" = "https://github.com/tableaprogramming-rgb/textmd-to-qti/issues"
 
 [project.optional-dependencies]
 dev = [

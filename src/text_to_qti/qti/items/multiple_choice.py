@@ -32,7 +32,9 @@ class MultipleChoiceGenerator(BaseItemGenerator):
             self.validate_question(question)
 
             # Create questestinterop root element (required by QTI 1.2)
-            questestinterop = etree.Element("questestinterop", nsmap={None: QTI_NAMESPACE})
+            questestinterop = etree.Element(
+                "questestinterop", nsmap={None: QTI_NAMESPACE}
+            )
 
             # Create item element as child of questestinterop
             item = etree.SubElement(questestinterop, "item")
@@ -54,7 +56,9 @@ class MultipleChoiceGenerator(BaseItemGenerator):
             return questestinterop
 
         except Exception as e:
-            raise GenerationError(f"Failed to generate multiple choice item: {e}") from e
+            raise GenerationError(
+                f"Failed to generate multiple choice item: {e}"
+            ) from e
 
     def _add_metadata(self, item: etree._Element, question: Question) -> None:
         """Add metadata section."""
@@ -98,7 +102,9 @@ class MultipleChoiceGenerator(BaseItemGenerator):
             choice_material = add_child(response_label, "material")
             add_child(choice_material, "mattext", choice.text, texttype="text/plain")
 
-    def _add_response_processing(self, item: etree._Element, question: Question) -> None:
+    def _add_response_processing(
+        self, item: etree._Element, question: Question
+    ) -> None:
         """Add response processing section for scoring."""
         resprocessing = add_child(item, "resprocessing")
 
@@ -120,11 +126,18 @@ class MultipleChoiceGenerator(BaseItemGenerator):
         correct_cond.set("continue", "No")
 
         condvar = add_child(correct_cond, "conditionvar")
-        varequal = add_child(condvar, "varequal", f"CHOICE_{correct_choice.letter.upper()}")
+        varequal = add_child(
+            condvar, "varequal", f"CHOICE_{correct_choice.letter.upper()}"
+        )
         varequal.set("respident", "response1")
 
         add_child(correct_cond, "setvar", "100", action="Set", varname="SCORE")
-        add_child(correct_cond, "displayfeedback", feedbacktype="Response", linkrefid="correct_fb")
+        add_child(
+            correct_cond,
+            "displayfeedback",
+            feedbacktype="Response",
+            linkrefid="correct_fb",
+        )
 
         # General condition for wrong answers
         general_cond = add_child(resprocessing, "respcondition")
@@ -133,7 +146,12 @@ class MultipleChoiceGenerator(BaseItemGenerator):
         condvar = add_child(general_cond, "conditionvar")
         add_child(condvar, "other")
 
-        add_child(general_cond, "displayfeedback", feedbacktype="Response", linkrefid="general_fb")
+        add_child(
+            general_cond,
+            "displayfeedback",
+            feedbacktype="Response",
+            linkrefid="general_fb",
+        )
 
     def _add_feedback(self, item: etree._Element, question: Question) -> None:
         """Add feedback sections."""

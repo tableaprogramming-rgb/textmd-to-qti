@@ -9,7 +9,9 @@ from text_to_qti.utils.errors import GenerationError
 class CanvasMetadataGenerator:
     """Generate Canvas-specific assessment_meta.xml file."""
 
-    def generate(self, quiz: Quiz, assessment_id: str = "ASSESSMENT_001") -> etree._Element:
+    def generate(
+        self, quiz: Quiz, assessment_id: str = "ASSESSMENT_001"
+    ) -> etree._Element:
         """Generate Canvas assessment metadata XML.
 
         Args:
@@ -85,7 +87,9 @@ class CanvasMetadataGenerator:
 
         # Lockdown browser settings
         etree.SubElement(quiz_elem, "require_lockdown_browser").text = "false"
-        etree.SubElement(quiz_elem, "require_lockdown_browser_for_results").text = "false"
+        etree.SubElement(quiz_elem, "require_lockdown_browser_for_results").text = (
+            "false"
+        )
         etree.SubElement(quiz_elem, "require_lockdown_browser_monitor").text = "false"
         etree.SubElement(quiz_elem, "lockdown_browser_monitor_data").text = ""
 
@@ -109,7 +113,9 @@ class CanvasMetadataGenerator:
         etree.SubElement(quiz_elem, "only_visible_to_overrides").text = "false"
         etree.SubElement(quiz_elem, "module_locked").text = "false"
 
-    def _add_assignment_metadata(self, quiz_elem: etree._Element, assessment_id: str) -> None:
+    def _add_assignment_metadata(
+        self, quiz_elem: etree._Element, assessment_id: str
+    ) -> None:
         """Add Canvas assignment metadata."""
         assignment = etree.SubElement(quiz_elem, "assignment")
         assignment.set("identifier", f"ASSIGNMENT_{assessment_id}")
@@ -173,7 +179,9 @@ class CanvasMetadataGenerator:
         etree.SubElement(assignment, "grader_comments_visible_to_graders").text = "true"
         etree.SubElement(assignment, "anonymous_grading").text = "false"
         etree.SubElement(assignment, "graders_anonymous_to_graders").text = "false"
-        etree.SubElement(assignment, "grader_names_visible_to_final_grader").text = "true"
+        etree.SubElement(assignment, "grader_names_visible_to_final_grader").text = (
+            "true"
+        )
         etree.SubElement(assignment, "anonymous_instructor_annotations").text = "false"
 
         # Post policy

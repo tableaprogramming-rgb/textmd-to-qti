@@ -51,7 +51,9 @@ class QTIGenerator:
             assessment_xml = self.assessment_gen.generate(self.quiz)
 
             # 2. Generate Canvas metadata XML
-            canvas_metadata_xml = self.canvas_metadata_gen.generate(self.quiz, self.ASSESSMENT_ID)
+            canvas_metadata_xml = self.canvas_metadata_gen.generate(
+                self.quiz, self.ASSESSMENT_ID
+            )
 
             # 3. Generate manifest XML
             manifest_xml = self.manifest_gen.generate(self.quiz, self.ASSESSMENT_ID)

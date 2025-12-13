@@ -14,7 +14,9 @@ class ManifestGenerator:
     MD_NS = "http://www.imsglobal.org/xsd/imsmd_v1p2"
     XSI_NS = "http://www.w3.org/2001/XMLSchema-instance"
 
-    def generate(self, quiz: Quiz, assessment_id: str = "ASSESSMENT_001") -> etree._Element:
+    def generate(
+        self, quiz: Quiz, assessment_id: str = "ASSESSMENT_001"
+    ) -> etree._Element:
         """Generate manifest XML (Canvas compatible format).
 
         Args:
@@ -42,7 +44,7 @@ class ManifestGenerator:
                 "{%s}schemaLocation" % self.XSI_NS,
                 "http://www.imsglobal.org/xsd/imsccv1p1/imscp_v1p1 http://www.imsglobal.org/xsd/imscp_v1p1.xsd "
                 "http://ltsc.ieee.org/xsd/imsccv1p1/LOM/resource http://www.imsglobal.org/profile/cc/ccv1p1/LOM/ccv1p1_lomresource_v1p0.xsd "
-                "http://www.imsglobal.org/xsd/imsmd_v1p2 http://www.imsglobal.org/xsd/imsmd_v1p2p2.xsd"
+                "http://www.imsglobal.org/xsd/imsmd_v1p2 http://www.imsglobal.org/xsd/imsmd_v1p2p2.xsd",
             )
 
             # Add metadata
@@ -102,7 +104,9 @@ class ManifestGenerator:
         # Canvas-specific assessment metadata resource
         metadata_resource = etree.SubElement(resources, "resource")
         metadata_resource.set("identifier", metadata_id)
-        metadata_resource.set("type", "associatedcontent/imscc_xmlv1p1/learning-application-resource")
+        metadata_resource.set(
+            "type", "associatedcontent/imscc_xmlv1p1/learning-application-resource"
+        )
         metadata_resource.set("href", f"{assessment_id}/assessment_meta.xml")
 
         file = etree.SubElement(metadata_resource, "file")

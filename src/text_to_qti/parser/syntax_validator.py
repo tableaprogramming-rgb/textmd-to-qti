@@ -75,7 +75,9 @@ class SyntaxValidator:
             try:
                 yaml.safe_load(yaml_content)
             except yaml.YAMLError as e:
-                raise ValidationError(f"Invalid YAML syntax in front matter: {e}") from e
+                raise ValidationError(
+                    f"Invalid YAML syntax in front matter: {e}"
+                ) from e
 
     def _validate_structure(self, content: str) -> None:
         """Validate overall structure.

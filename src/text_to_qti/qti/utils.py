@@ -17,7 +17,9 @@ NSMAP = {
 }
 
 
-def create_element(tag: str, text: Optional[str] = None, nsmap: Optional[Dict] = None, **attribs) -> etree._Element:
+def create_element(
+    tag: str, text: Optional[str] = None, nsmap: Optional[Dict] = None, **attribs
+) -> etree._Element:
     """Create an XML element with namespace support.
 
     Args:
@@ -35,7 +37,9 @@ def create_element(tag: str, text: Optional[str] = None, nsmap: Optional[Dict] =
     return elem
 
 
-def add_child(parent: etree._Element, tag: str, text: Optional[str] = None, **attribs) -> etree._Element:
+def add_child(
+    parent: etree._Element, tag: str, text: Optional[str] = None, **attribs
+) -> etree._Element:
     """Add a child element to a parent.
 
     Args:
@@ -53,7 +57,9 @@ def add_child(parent: etree._Element, tag: str, text: Optional[str] = None, **at
     return child
 
 
-def element_to_string(elem: etree._Element, pretty_print: bool = True, with_declaration: bool = False) -> str:
+def element_to_string(
+    elem: etree._Element, pretty_print: bool = True, with_declaration: bool = False
+) -> str:
     """Convert element to string.
 
     Args:
@@ -64,7 +70,9 @@ def element_to_string(elem: etree._Element, pretty_print: bool = True, with_decl
     Returns:
         XML string
     """
-    result = etree.tostring(elem, encoding="unicode", pretty_print=pretty_print, xml_declaration=False)
+    result = etree.tostring(
+        elem, encoding="unicode", pretty_print=pretty_print, xml_declaration=False
+    )
     if with_declaration:
         result = '<?xml version="1.0" encoding="UTF-8"?>\n' + result
     return result

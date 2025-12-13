@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz identifier="ga69c3829dfd16c5d47ac957400f09d22" xmlns="http://canvas.instructure.com/xsd/cccv1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://canvas.instructure.com/xsd/cccv1p0 https://canvas.instructure.com/xsd/cccv1p0.xsd">
+  <title>Review Quiz: Linked List</title>
+  <description>&lt;p&gt;&lt;img id="445777" role="presentation" src="$IMS-CC-FILEBASE$/template-images/content-dividers/content-divider-3.png" alt="" width="100%" data-api-endpoint="https://design.instructure.com/api/v1/courses/313/files/15541" data-api-returntype="File" loading="lazy"&gt;&lt;/p&gt;
+&lt;h4&gt;&lt;img id="446865" role="presentation" src="$IMS-CC-FILEBASE$/template-images/icons/black-H2-45px/quiz.png" alt="" data-api-endpoint="https://design.instructure.com/api/v1/courses/313/files/15610" data-api-returntype="File" loading="lazy"&gt; &lt;span style="font-family: inherit; font-size: 1.8em;"&gt;Quick Review Questions&lt;/span&gt;&lt;/h4&gt;
+&lt;div class="ProseMirror"&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;What are the two components of a Linked List Node?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Why is a Linked List better than an array when performing frequent insertions in the middle of a list?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What is the purpose of the&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;code&gt;head&lt;/code&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;pointer?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you delete a node, which C function&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;em&gt;must&lt;/em&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;you call to avoid a memory leak?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img id="445778" role="presentation" src="$IMS-CC-FILEBASE$/template-images/footers/footer-1.png" alt="" width="100%" data-api-endpoint="https://design.instructure.com/api/v1/courses/313/files/15542" data-api-returntype="File" loading="lazy"&gt;&lt;/p&gt;</description>
+  <due_at>2025-10-10T15:59:59</due_at>
+  <shuffle_answers>false</shuffle_answers>
+  <scoring_policy>keep_highest</scoring_policy>
+  <hide_results></hide_results>
+  <quiz_type>graded_survey</quiz_type>
+  <points_possible>80.0</points_possible>
+  <require_lockdown_browser>false</require_lockdown_browser>
+  <require_lockdown_browser_for_results>false</require_lockdown_browser_for_results>
+  <require_lockdown_browser_monitor>false</require_lockdown_browser_monitor>
+  <lockdown_browser_monitor_data></lockdown_browser_monitor_data>
+  <show_correct_answers>true</show_correct_answers>
+  <anonymous_submissions>false</anonymous_submissions>
+  <could_be_locked>true</could_be_locked>
+  <disable_timer_autosubmission>false</disable_timer_autosubmission>
+  <allowed_attempts>1</allowed_attempts>
+  <one_question_at_a_time>false</one_question_at_a_time>
+  <cant_go_back>false</cant_go_back>
+  <available>true</available>
+  <one_time_results>false</one_time_results>
+  <show_correct_answers_last_attempt>false</show_correct_answers_last_attempt>
+  <only_visible_to_overrides>false</only_visible_to_overrides>
+  <module_locked>false</module_locked>
+  <assignment identifier="ga5263b3fda654676bb152f520550c947">
+    <title>Review Quiz: Linked List</title>
+    <due_at>2025-10-10T15:59:59</due_at>
+    <lock_at/>
+    <unlock_at/>
+    <module_locked>false</module_locked>
+    <all_day_date>2025-10-10</all_day_date>
+    <workflow_state>published</workflow_state>
+    <assignment_overrides>
+    </assignment_overrides>
+    <quiz_identifierref>ga69c3829dfd16c5d47ac957400f09d22</quiz_identifierref>
+    <allowed_extensions></allowed_extensions>
+    <has_group_category>false</has_group_category>
+    <points_possible>80.0</points_possible>
+    <grading_type>points</grading_type>
+    <all_day>true</all_day>
+    <submission_types>online_quiz</submission_types>
+    <position>3</position>
+    <turnitin_enabled>false</turnitin_enabled>
+    <vericite_enabled>false</vericite_enabled>
+    <peer_review_count>0</peer_review_count>
+    <peer_reviews>false</peer_reviews>
+    <automatic_peer_reviews>false</automatic_peer_reviews>
+    <anonymous_peer_reviews>false</anonymous_peer_reviews>
+    <grade_group_students_individually>false</grade_group_students_individually>
+    <freeze_on_copy>false</freeze_on_copy>
+    <omit_from_final_grade>false</omit_from_final_grade>
+    <hide_in_gradebook>false</hide_in_gradebook>
+    <intra_group_peer_reviews>false</intra_group_peer_reviews>
+    <only_visible_to_overrides>false</only_visible_to_overrides>
+    <post_to_sis>false</post_to_sis>
+    <moderated_grading>false</moderated_grading>
+    <grader_count>0</grader_count>
+    <grader_comments_visible_to_graders>true</grader_comments_visible_to_graders>
+    <anonymous_grading>false</anonymous_grading>
+    <graders_anonymous_to_graders>false</graders_anonymous_to_graders>
+    <grader_names_visible_to_final_grader>true</grader_names_visible_to_final_grader>
+    <anonymous_instructor_annotations>false</anonymous_instructor_annotations>
+    <post_policy>
+      <post_manually>false</post_manually>
+    </post_policy>
+  </assignment>
+  <assignment_group_identifierref>gec557c3c5631e33a09c12a92361fac62</assignment_group_identifierref>
+  <assignment_overrides>
+  </assignment_overrides>
+</quiz>

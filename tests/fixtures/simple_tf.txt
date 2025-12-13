@@ -1,0 +1,14 @@
+---
+title: Simple True/False Quiz
+description: A basic quiz with one true/false question
+---
+
+## Question 1
+[Type: true_false]
+
+Paris is the capital of France.
+
+*a) True
+b) False
+
+Feedback: Correct! Paris is the capital of France.

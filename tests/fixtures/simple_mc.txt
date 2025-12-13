@@ -1,0 +1,19 @@
+---
+title: Simple Multiple Choice Quiz
+description: A basic quiz with one multiple choice question
+points_per_question: 1
+shuffle_answers: false
+---
+
+## Question 1
+[Type: multiple_choice]
+[Points: 1]
+
+What is the capital of France?
+
+a) London
+b) Berlin
+*c) Paris
+d) Madrid
+
+Feedback: Paris is the capital and largest city of France.

@@ -1,0 +1,40 @@
+---
+title: Mixed Question Types Quiz
+description: A quiz with multiple choice and true/false questions
+points_per_question: 1
+---
+
+## Question 1
+[Type: multiple_choice]
+[Points: 1]
+
+What is the capital of Japan?
+
+a) Beijing
+b) Seoul
+*c) Tokyo
+d) Bangkok
+
+## Question 2
+[Type: true_false]
+[Points: 1]
+
+The Earth is flat.
+
+*a) False
+b) True
+
+Feedback: The Earth is an oblate spheroid.
+
+## Question 3
+[Type: multiple_choice]
+[Points: 2]
+
+Which of these is a programming language?
+
+a) Python
+b) Java
+c) JavaScript
+*d) All of the above
+
+Feedback: All three are widely-used programming languages.

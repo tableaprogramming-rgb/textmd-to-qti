@@ -1,0 +1,83 @@
+---
+title: Your Quiz Title Here
+description: Optional - describe your quiz here
+points_per_question: 1
+shuffle_answers: false
+---
+
+## Question 1
+[Type: multiple_choice]
+
+Write your first question here? End with a question mark.
+
+a) First answer choice
+b) Second answer choice
+*c) Correct answer (mark with asterisk *)
+d) Fourth answer choice
+
+Feedback: Optional - explain why C is correct and help students learn.
+
+## Question 2
+[Type: true_false]
+
+Write a statement that is either true or false.
+
+*a) True
+b) False
+
+Feedback: Optional - explain the correct answer.
+
+## Question 3
+[Type: multiple_choice]
+
+Another multiple choice question?
+
+a) Wrong answer
+*b) Correct answer
+c) Another wrong answer
+d) Yet another wrong answer
+
+Feedback: Optional feedback for students.
+
+## Question 4
+[Type: true_false]
+
+Another true/false statement here.
+
+a) True
+*b) False
+
+Feedback: Optional explanation.
+
+# NOTES FOR THIS TEMPLATE:
+#
+# 1. YAML FRONT MATTER (at the top):
+#    - title: Name of your quiz (required)
+#    - description: Optional description
+#    - points_per_question: Default points per question (default is 1)
+#    - shuffle_answers: true or false (randomize answers in Canvas)
+#
+# 2. QUESTION STRUCTURE:
+#    - Must start with ## Question N (1, 2, 3...)
+#    - Must have [Type: multiple_choice] or [Type: true_false]
+#    - Blank line required after the type
+#    - Question text (can be multiple lines)
+#    - Blank line before answers
+#    - Answer choices labeled a) b) c) d)... (sequential, no gaps)
+#    - Exactly ONE correct answer marked with *
+#    - Optional: Feedback line starting with "Feedback:"
+#
+# 3. ANSWER CHOICES:
+#    - Multiple Choice: 2+ choices, exactly 1 marked correct
+#    - True/False: exactly 2 choices (a and b), exactly 1 marked correct
+#    - Format: *a) Correct or b) Incorrect (asterisk at start)
+#
+# 4. VALIDATION:
+#    - Run: python -m text_to_qti validate TEMPLATE.txt
+#    - Should see: ✓ Validation successful!
+#
+# 5. CONVERSION:
+#    - Run: python -m text_to_qti convert TEMPLATE.txt -o quiz.zip
+#    - Upload quiz.zip to Canvas
+#
+# Delete this entire comment section before saving your quiz!

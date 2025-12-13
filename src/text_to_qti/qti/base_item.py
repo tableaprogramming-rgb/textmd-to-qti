@@ -1,6 +1,7 @@
 """Base class for QTI item generators (extensible for different question types)."""
 
 from abc import ABC, abstractmethod
+
 from lxml import etree
 
 from text_to_qti.parser.question_models import Question

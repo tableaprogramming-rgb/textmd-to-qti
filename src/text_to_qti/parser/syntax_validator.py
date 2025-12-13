@@ -1,8 +1,6 @@
 """Validator for markdown quiz file syntax."""
 
 import re
-from pathlib import Path
-from typing import List, Tuple
 
 import yaml
 
@@ -91,7 +89,8 @@ class SyntaxValidator:
         # Check if there are any questions
         if not self.QUESTION_HEADER_PATTERN.search(content):
             raise ValidationError(
-                "No questions found. Questions must start with '## Question N' where N is a number."
+                "No questions found. "
+                "Questions must start with '## Question N' where N is a number."
             )
 
     def _validate_questions(self, content: str) -> None:
@@ -133,8 +132,6 @@ class SyntaxValidator:
 
         # Check for question type
         has_type = False
-        has_question_text = False
-        has_choices = False
         question_type: str = ""
 
         for line in lines:
@@ -154,7 +151,8 @@ class SyntaxValidator:
                         int(value.strip())
                     except ValueError:
                         raise ValidationError(
-                            f"Question {question_num}: Points value '{value}' is not an integer"
+                            f"Question {question_num}: Points value '{value}' "
+                            "is not an integer"
                         )
 
         if not has_type:
@@ -186,7 +184,8 @@ class SyntaxValidator:
                     correct_count += 1
                 if not text.strip():
                     raise ValidationError(
-                        f"Question {question_num}: Empty answer choice text for '{letter})'"
+                        f"Question {question_num}: "
+                        f"Empty answer choice text for '{letter})'"
                     )
 
         # Check for sequential letters
@@ -208,14 +207,20 @@ class SyntaxValidator:
         if question_type == "true_false":
             if len(letters) != 2:
                 raise ValidationError(
-                    f"Question {question_num}: True/False questions must have exactly 2 choices, found {len(letters)}"
+                    f"Question {question_num}: "
+                    f"True/False questions must have exactly 2 choices, "
+                    f"found {len(letters)}"
                 )
         elif question_type == "multiple_choice":
             if len(letters) < 2:
                 raise ValidationError(
-                    f"Question {question_num}: Multiple choice must have at least 2 choices, found {len(letters)}"
+                    f"Question {question_num}: "
+                    f"Multiple choice must have at least 2 choices, "
+                    f"found {len(letters)}"
                 )
             if correct_count != 1:
                 raise ValidationError(
-                    f"Question {question_num}: Multiple choice must have exactly 1 correct answer, found {correct_count}"
+                    f"Question {question_num}: "
+                    f"Multiple choice must have exactly 1 correct answer, "
+                    f"found {correct_count}"
                 )

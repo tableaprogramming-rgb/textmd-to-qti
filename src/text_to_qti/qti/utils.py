@@ -1,8 +1,8 @@
 """XML utilities for QTI generation."""
 
-from lxml import etree
-from typing import Optional, Dict, Any
+from typing import Dict, Optional
 
+from lxml import etree
 
 # QTI 1.2 namespaces
 QTI_NAMESPACE = "http://www.imsglobal.org/xsd/ims_qtiasiv1p2"

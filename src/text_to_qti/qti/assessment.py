@@ -2,7 +2,7 @@
 
 from lxml import etree
 
-from text_to_qti.parser.question_models import Quiz, QuestionType
+from text_to_qti.parser.question_models import QuestionType, Quiz
 from text_to_qti.qti.utils import QTI_NAMESPACE, add_child
 from text_to_qti.utils.errors import GenerationError
 

@@ -1,7 +1,8 @@
 """Tests for markdown parser."""
 
-import pytest
 from pathlib import Path
+
+import pytest
 
 from text_to_qti.parser.markdown_parser import MarkdownParser
 from text_to_qti.parser.question_models import QuestionType

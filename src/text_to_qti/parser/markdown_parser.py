@@ -1,8 +1,7 @@
 """Parser for converting markdown quiz files to Question objects."""
 
 import re
-from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import List, Optional
 
 import markdown
 import yaml
@@ -182,7 +181,8 @@ class MarkdownParser:
                         question_type = QuestionType(value.strip().lower())
                     except ValueError:
                         raise ParseError(
-                            f"Invalid question type: {value}. Must be 'multiple_choice' or 'true_false'"
+                            f"Invalid question type: {value}. "
+                            "Must be 'multiple_choice' or 'true_false'"
                         )
                 elif key == "Points":
                     try:
@@ -248,7 +248,8 @@ class MarkdownParser:
         # Validate
         if not question_type:
             raise ParseError(
-                "Question type not specified. Use [Type: multiple_choice] or [Type: true_false]"
+                "Question type not specified. "
+                "Use [Type: multiple_choice] or [Type: true_false]"
             )
 
         if not question_text:

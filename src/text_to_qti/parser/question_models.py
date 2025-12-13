@@ -103,7 +103,8 @@ class Question(BaseModel):
             correct_count = sum(1 for choice in v if choice.is_correct)
             if correct_count != 1:
                 raise ValueError(
-                    f"Multiple choice questions must have exactly 1 correct answer, got: {correct_count}"
+                    "Multiple choice questions must have exactly "
+                    f"1 correct answer, got: {correct_count}"
                 )
 
         return v

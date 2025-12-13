@@ -4,8 +4,6 @@ import tempfile
 import zipfile
 from pathlib import Path
 
-import pytest
-
 from text_to_qti.parser.markdown_parser import MarkdownParser
 from text_to_qti.qti.generator import QTIGenerator
 

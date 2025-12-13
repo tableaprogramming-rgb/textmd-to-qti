@@ -1,6 +1,5 @@
 """imsmanifest.xml generator."""
 
-from typing import List
 from lxml import etree
 
 from text_to_qti.parser.question_models import Quiz
@@ -42,9 +41,9 @@ class ManifestGenerator:
             manifest.set("identifier", "MANIFEST_001")
             manifest.set(
                 "{%s}schemaLocation" % self.XSI_NS,
-                "http://www.imsglobal.org/xsd/imsccv1p1/imscp_v1p1 http://www.imsglobal.org/xsd/imscp_v1p1.xsd "
-                "http://ltsc.ieee.org/xsd/imsccv1p1/LOM/resource http://www.imsglobal.org/profile/cc/ccv1p1/LOM/ccv1p1_lomresource_v1p0.xsd "
-                "http://www.imsglobal.org/xsd/imsmd_v1p2 http://www.imsglobal.org/xsd/imsmd_v1p2p2.xsd",
+                "http://www.imsglobal.org/xsd/imsccv1p1/imscp_v1p1 http://www.imsglobal.org/xsd/imscp_v1p1.xsd "  # noqa: E501
+                "http://ltsc.ieee.org/xsd/imsccv1p1/LOM/resource http://www.imsglobal.org/profile/cc/ccv1p1/LOM/ccv1p1_lomresource_v1p0.xsd "  # noqa: E501
+                "http://www.imsglobal.org/xsd/imsmd_v1p2 http://www.imsglobal.org/xsd/imsmd_v1p2p2.xsd",  # noqa: E501
             )
 
             # Add metadata

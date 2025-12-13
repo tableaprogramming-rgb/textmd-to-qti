@@ -2,6 +2,7 @@
 
 import zipfile
 from pathlib import Path
+
 from lxml import etree
 
 from text_to_qti.qti.utils import element_to_string

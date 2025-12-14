@@ -37,3 +37,19 @@ jobs:
           flags: unittests
           name: codecov-umbrella
           fail_ci_if_error: false
+
+  tests:
+    name: tests
+    needs: test
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Check test results
+        run: |
+          if [ "${{ needs.test.result }}" = "success" ]; then
+            echo "All tests passed!"
+            exit 0
+          else
+            echo "Some tests failed!"
+            exit 1
+          fi

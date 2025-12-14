@@ -3,11 +3,11 @@
 from pathlib import Path
 from typing import Optional
 
+from text_to_qti.packager.zip_creator import ZIPCreator
 from text_to_qti.parser.question_models import Quiz
 from text_to_qti.qti.assessment import AssessmentGenerator
 from text_to_qti.qti.canvas_metadata import CanvasMetadataGenerator
 from text_to_qti.qti.manifest import ManifestGenerator
-from text_to_qti.packager.zip_creator import ZIPCreator
 from text_to_qti.utils.errors import GenerationError
 
 
@@ -51,7 +51,9 @@ class QTIGenerator:
             assessment_xml = self.assessment_gen.generate(self.quiz)
 
             # 2. Generate Canvas metadata XML
-            canvas_metadata_xml = self.canvas_metadata_gen.generate(self.quiz, self.ASSESSMENT_ID)
+            canvas_metadata_xml = self.canvas_metadata_gen.generate(
+                self.quiz, self.ASSESSMENT_ID
+            )
 
             # 3. Generate manifest XML
             manifest_xml = self.manifest_gen.generate(self.quiz, self.ASSESSMENT_ID)

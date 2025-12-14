@@ -4,8 +4,6 @@ import tempfile
 import zipfile
 from pathlib import Path
 
-import pytest
-
 from text_to_qti.parser.markdown_parser import MarkdownParser
 from text_to_qti.qti.generator import QTIGenerator
 
@@ -43,7 +41,7 @@ class TestQTIGenerator:
         try:
             generator.generate(output_path)
 
-            with zipfile.ZipFile(output_path, 'r') as zf:
+            with zipfile.ZipFile(output_path, "r") as zf:
                 names = zf.namelist()
 
                 # Check required files (Canvas format)
@@ -66,7 +64,7 @@ class TestQTIGenerator:
         try:
             generator.generate(output_path)
 
-            with zipfile.ZipFile(output_path, 'r') as zf:
+            with zipfile.ZipFile(output_path, "r") as zf:
                 manifest = zf.read("imsmanifest.xml").decode("utf-8")
 
                 # Check manifest structure (Canvas format)
@@ -90,9 +88,11 @@ class TestQTIGenerator:
         try:
             generator.generate(output_path)
 
-            with zipfile.ZipFile(output_path, 'r') as zf:
+            with zipfile.ZipFile(output_path, "r") as zf:
                 # Get assessment file (items are now embedded)
-                assessment_content = zf.read("ASSESSMENT_001/ASSESSMENT_001.xml").decode("utf-8")
+                assessment_content = zf.read(
+                    "ASSESSMENT_001/ASSESSMENT_001.xml"
+                ).decode("utf-8")
 
                 # Check for correct answer and response processing
                 assert "CHOICE_C" in assessment_content  # Paris is C
@@ -114,9 +114,11 @@ class TestQTIGenerator:
         try:
             generator.generate(output_path)
 
-            with zipfile.ZipFile(output_path, 'r') as zf:
+            with zipfile.ZipFile(output_path, "r") as zf:
                 # Get assessment file (items are embedded)
-                assessment_content = zf.read("ASSESSMENT_001/ASSESSMENT_001.xml").decode("utf-8")
+                assessment_content = zf.read(
+                    "ASSESSMENT_001/ASSESSMENT_001.xml"
+                ).decode("utf-8")
 
                 # Check for true/false specific marker
                 assert "true_false_question" in assessment_content
@@ -136,8 +138,10 @@ class TestQTIGenerator:
         try:
             generator.generate(output_path)
 
-            with zipfile.ZipFile(output_path, 'r') as zf:
-                assessment = zf.read("ASSESSMENT_001/ASSESSMENT_001.xml").decode("utf-8")
+            with zipfile.ZipFile(output_path, "r") as zf:
+                assessment = zf.read("ASSESSMENT_001/ASSESSMENT_001.xml").decode(
+                    "utf-8"
+                )
 
                 # Check that assessment has section with embedded items
                 assert "<section" in assessment
@@ -160,9 +164,11 @@ class TestQTIGenerator:
         try:
             generator.generate(output_path)
 
-            with zipfile.ZipFile(output_path, 'r') as zf:
+            with zipfile.ZipFile(output_path, "r") as zf:
                 # Assessment file contains all items
-                assessment_content = zf.read("ASSESSMENT_001/ASSESSMENT_001.xml").decode("utf-8")
+                assessment_content = zf.read(
+                    "ASSESSMENT_001/ASSESSMENT_001.xml"
+                ).decode("utf-8")
 
                 # Third question has 2 points (stored as float 2.0)
                 assert "<fieldentry>2.0</fieldentry>" in assessment_content

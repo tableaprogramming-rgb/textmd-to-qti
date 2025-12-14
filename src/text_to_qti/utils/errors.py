@@ -13,7 +13,10 @@ class ParseError(TextToQTIError):
     """Error during parsing of text file."""
 
     def __init__(
-        self, message: str, line_number: Optional[int] = None, column: Optional[int] = None
+        self,
+        message: str,
+        line_number: Optional[int] = None,
+        column: Optional[int] = None,
     ) -> None:
         """Initialize ParseError with optional line and column information.
 

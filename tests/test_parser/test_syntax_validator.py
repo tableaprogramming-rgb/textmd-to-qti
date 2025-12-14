@@ -1,7 +1,8 @@
 """Tests for syntax validator."""
 
-import pytest
 from pathlib import Path
+
+import pytest
 
 from text_to_qti.parser.syntax_validator import SyntaxValidator
 from text_to_qti.utils.errors import ValidationError

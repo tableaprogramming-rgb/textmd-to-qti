@@ -1,7 +1,6 @@
 """CLI for text-to-QTI converter."""
 
 import sys
-from pathlib import Path
 
 import click
 from rich.console import Console
@@ -11,7 +10,6 @@ from text_to_qti.parser.markdown_parser import MarkdownParser
 from text_to_qti.parser.syntax_validator import SyntaxValidator
 from text_to_qti.qti.generator import QTIGenerator
 from text_to_qti.utils.errors import TextToQTIError
-
 
 console = Console()
 
@@ -42,7 +40,9 @@ def cli() -> None:
     default="1.2",
     help="QTI version to generate",
 )
-def convert(input_file: str, output: str, validate_only: bool, qti_version: str) -> None:
+def convert(
+    input_file: str, output: str, validate_only: bool, qti_version: str
+) -> None:
     """Convert a text file to QTI package."""
     try:
         with Progress() as progress:

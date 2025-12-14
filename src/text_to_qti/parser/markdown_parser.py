@@ -1,8 +1,7 @@
 """Parser for converting markdown quiz files to Question objects."""
 
 import re
-from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import List, Optional
 
 import markdown
 import yaml
@@ -133,7 +132,9 @@ class MarkdownParser:
         question_blocks = self.QUESTION_PATTERN.findall(content)
 
         if not question_blocks:
-            raise ParseError("No questions found in quiz. Questions must start with '## Question N'")
+            raise ParseError(
+                "No questions found in quiz. Questions must start with '## Question N'"
+            )
 
         for idx, block in enumerate(question_blocks, 1):
             try:
@@ -180,13 +181,16 @@ class MarkdownParser:
                         question_type = QuestionType(value.strip().lower())
                     except ValueError:
                         raise ParseError(
-                            f"Invalid question type: {value}. Must be 'multiple_choice' or 'true_false'"
+                            f"Invalid question type: {value}. "
+                            "Must be 'multiple_choice' or 'true_false'"
                         )
                 elif key == "Points":
                     try:
                         points = int(value.strip())
                     except ValueError:
-                        raise ParseError(f"Invalid points value: {value}. Must be an integer")
+                        raise ParseError(
+                            f"Invalid points value: {value}. Must be an integer"
+                        )
                 elif key == "ID":
                     question_id = value.strip()
                 line_idx += 1
@@ -209,7 +213,11 @@ class MarkdownParser:
                     continue
 
             # Check for feedback
-            if in_choices and line.strip() and line.strip().lower().startswith("feedback:"):
+            if (
+                in_choices
+                and line.strip()
+                and line.strip().lower().startswith("feedback:")
+            ):
                 feedback_text = line.strip()[9:].strip()
                 feedback_lines = [feedback_text] if feedback_text else []
 
@@ -239,7 +247,10 @@ class MarkdownParser:
 
         # Validate
         if not question_type:
-            raise ParseError("Question type not specified. Use [Type: multiple_choice] or [Type: true_false]")
+            raise ParseError(
+                "Question type not specified. "
+                "Use [Type: multiple_choice] or [Type: true_false]"
+            )
 
         if not question_text:
             raise ParseError("Question text is empty")

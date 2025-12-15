@@ -10,6 +10,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Nothing yet
 
+## [0.1.1] - 2025-12-15
+
+### Added
+- Comprehensive security policy (SECURITY.md)
+- Academic citation support (CITATION.cff)
+- Authors file documenting contributors including Claude
+- Pre-commit configuration for local development
+
+### Improved
+- Repository best practices implementation
+- PyPI package classifiers for better discoverability
+- Python 3.12 and 3.13 testing support
+- Dependency version constraints to prevent breaking changes
+- GitHub Actions workflows (CodeQL scanning, Dependabot)
+- Documentation with Claude attribution
+
+### Fixed
+- Author metadata placeholders in package configuration
+- Package distribution to include all documentation files
+- Type hints support with py.typed marker
+- CHANGELOG version tracking
+- Rich dependency version constraint to support <15.0.0
+
+### Security
+- Added Dependabot for automated dependency updates
+- Added CodeQL for code security scanning
+- Created security vulnerability reporting policy
+- Added CODEOWNERS for automatic review assignment
+
 ## [0.1.0] - 2025-12-14
 
 ### Initial Release

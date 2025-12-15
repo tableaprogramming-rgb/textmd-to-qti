@@ -5,32 +5,39 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "text-to-qti"
 version = "0.1.0"
-description = "Convert markdown-based quiz text files to QTI format for Canvas LMS"
+description = "Convert markdown-based quiz text files to QTI format for Canvas LMS, built with Claude AI assistance"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
-    {name = "Your Name", email = "tableaprogramming@gmail.com"}
+    {name = "Eric Magto", email = "tableaprogramming@gmail.com"}
 ]
 keywords = ["qti", "canvas", "quiz", "conversion", "markdown"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+    "Topic :: Education :: Testing",
     "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Typing :: Typed",
+    "Framework :: Pydantic",
 ]
 
 dependencies = [
-    "lxml>=5.3.0",
-    "pydantic>=2.10.0",
-    "click>=8.1.0",
-    "rich>=13.0.0",
-    "markdown>=3.5.0",
-    "PyYAML>=6.0.0",
+    "lxml>=5.3.0,<6.0.0",
+    "pydantic>=2.10.0,<3.0.0",
+    "click>=8.1.0,<9.0.0",
+    "rich>=13.0.0,<14.0.0",
+    "markdown>=3.5.0,<4.0.0",
+    "PyYAML>=6.0.0,<7.0.0",
 ]
 
 [project.urls]
@@ -50,6 +57,14 @@ dev = [
 
 [project.scripts]
 text-to-qti = "text_to_qti.cli:cli"
+
+[tool.setuptools]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+text_to_qti = ["py.typed"]
 
 [tool.black]
 line-length = 88

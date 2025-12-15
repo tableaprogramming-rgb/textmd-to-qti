@@ -5,6 +5,7 @@
 [![Python Versions](https://img.shields.io/pypi/pyversions/text-to-qti.svg)](https://pypi.org/project/text-to-qti/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Built with Claude](https://img.shields.io/badge/Built%20with-Claude-5A67D8?logo=anthropic)](https://claude.ai)
 
 Convert markdown-based quiz files to QTI format for Canvas LMS import.
 
@@ -443,6 +444,19 @@ Contributions are welcome and appreciated! Please see [CONTRIBUTING.md](CONTRIBU
 - How to submit pull requests
 - Reporting bugs and suggesting features
 
+## Acknowledgments
+
+This project was made possible with **[Claude](https://claude.ai)**, an AI assistant by Anthropic. Claude contributed significantly to:
+
+- **Architecture Design** - Conceptualized the overall system design for QTI generation
+- **Implementation** - Built the complete markdown-to-QTI conversion pipeline
+- **Testing** - Developed comprehensive test suite (57 tests, 95%+ coverage)
+- **Documentation** - Created all guides, templates, and setup documentation
+- **DevOps** - Configured GitHub Actions CI/CD and PyPI publishing automation
+- **Best Practices** - Implemented repository standards and security scanning
+
+We're grateful for Claude's essential contributions to making educational technology more accessible.
+
 ## License
 
 MIT License - See LICENSE file for details
@@ -458,7 +472,9 @@ For issues, questions, or suggestions:
 
 ## Changelog
 
-### Version 0.1.0 (Initial MVP)
+See [CHANGELOG.md](CHANGELOG.md) for the full version history and release notes.
+
+### Latest Version: 0.1.0 (Initial MVP)
 
 - ✅ Markdown parser with YAML metadata
 - ✅ Multiple choice and true/false support

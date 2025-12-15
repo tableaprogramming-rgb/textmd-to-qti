@@ -8,22 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Initial release of text-to-qti converter
-- Support for multiple choice and true/false questions
-- Markdown-based quiz file format with YAML metadata
-- Canvas-compatible QTI 1.2 package generation
-- Comprehensive syntax validation with helpful error messages
-- CLI with progress indicators and colorful output
-- Full test coverage for core functionality
+- Nothing yet
 
-### Features
-- Question metadata support (custom points, IDs, feedback)
-- Answer shuffling configuration
-- Markdown formatting in question text
-- Extensible architecture for adding new question types
-- Development tools: black, ruff, mypy, pytest integration
-
-## [0.1.0] - 2025-01-13
+## [0.1.0] - 2025-12-14
 
 ### Initial Release
 

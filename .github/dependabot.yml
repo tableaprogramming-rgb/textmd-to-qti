@@ -1,0 +1,34 @@
+version: 2
+updates:
+  # Enable version updates for Python dependencies
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "03:00"
+    allow:
+      - dependency-type: "all"
+    reviewers:
+      - "tableaprogramming-rgb"
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore"
+      include: "scope"
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+    reviewers:
+      - "tableaprogramming-rgb"
+    labels:
+      - "github-actions"
+    commit-message:
+      prefix: "ci"
+      include: "scope"

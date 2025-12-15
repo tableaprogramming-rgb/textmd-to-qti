@@ -38,6 +38,7 @@ htmlcov/
 .coverage
 .coverage.*
 .cache
+.coverage*.json
 nosetests.xml
 coverage.xml
 *.cover
@@ -49,6 +50,9 @@ coverage.xml
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+# ruff
+.ruff_cache/
 
 # Pyre type checker
 .pyre/

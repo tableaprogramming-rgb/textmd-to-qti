@@ -1,0 +1,67 @@
+repos:
+  # Code formatting
+  - repo: https://github.com/psf/black
+    rev: 23.12.1
+    hooks:
+      - id: black
+        language_version: python3
+
+  # Linting
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.11
+    hooks:
+      - id: ruff
+        args: [--fix]
+
+  # Type checking
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.7.1
+    hooks:
+      - id: mypy
+        args: [--ignore-missing-imports]
+        additional_dependencies: [types-PyYAML, types-markdown]
+
+  # General file fixes
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-merge-conflict
+      - id: debug-statements
+      - id: mixed-line-ending
+
+  # Security scanning
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.5
+    hooks:
+      - id: bandit
+        args: [-ll, --skip, B101, B601]
+
+# Configuration
+default_language_version:
+  python: python3.8
+
+# Exclude certain paths
+exclude: |
+  (?x)^(
+      \.venv/|
+      venv/|
+      build/|
+      dist/|
+      \.eggs/|
+      .*\.egg-info/|
+      __pycache__/
+  )
+
+ci:
+  autofix_commit_msg: 'chore: auto fixes from pre-commit hooks'
+  autofix_prs: true
+  autoupdate_branch: ''
+  autoupdate_commit_msg: 'chore: pre-commit hooks autoupdate'
+  autoupdate_schedule: weekly
+  skip: []
+  submodules: false
